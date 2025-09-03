@@ -5,7 +5,6 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/drone/',
   server: {
     host: "::",
     port: 8080,
@@ -15,7 +14,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "dist",
+    sourcemap: true
   },
   plugins: [react(), expressPlugin()],
   resolve: {
